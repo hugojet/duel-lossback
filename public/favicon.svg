@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="duelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="#0f172a"/>
+  <path d="M9 8 L9 24 L17 24 Q24 24 24 16 Q24 8 17 8 Z" fill="url(#duelGrad)"/>
+  <path d="M12 11 L12 21 L16 21 Q20 21 20 16 Q20 11 16 11 Z" fill="#0f172a"/>
+</svg>

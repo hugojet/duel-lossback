@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-duel-dark text-white font-sans antialiased;
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(249, 115, 22, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 85% 100%, rgba(37, 99, 235, 0.07) 0%, transparent 45%);
+  }
+
+  * {
+    @apply border-duel-border;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-8 py-4 bg-duel-orange text-white font-bold rounded-xl
+           hover:bg-duel-orange-light transition-all duration-200
+           shadow-orange-glow hover:shadow-[0_0_48px_rgba(249,115,22,0.8)]
+           active:scale-95 font-display tracking-tight;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-8 py-4 border border-duel-orange/60 text-duel-orange-light font-bold rounded-xl
+           hover:bg-duel-orange/15 transition-all duration-200
+           active:scale-95 font-display tracking-tight;
+  }
+
+  .btn-blue {
+    @apply inline-flex items-center gap-2 px-8 py-4 bg-duel-blue text-white font-bold rounded-xl
+           hover:bg-duel-blue-light transition-all duration-200
+           shadow-blue-glow active:scale-95 font-display tracking-tight;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-heading {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-display tracking-tight leading-[1.05];
+  }
+
+  .section-subheading {
+    @apply text-lg text-slate-400 mt-4 max-w-3xl leading-relaxed;
+  }
+
+  .card {
+    @apply bg-duel-card border border-duel-border rounded-xl p-6 shadow-card;
+  }
+
+  .glass-card {
+    @apply bg-duel-card/70 backdrop-blur-md border border-duel-border rounded-xl p-6 shadow-card;
+  }
+
+  .orange-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 bg-duel-orange/15 text-duel-orange-light border border-duel-orange/35 rounded-md text-sm font-bold font-display tracking-wide uppercase;
+  }
+
+  .blue-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 bg-duel-blue/15 text-duel-blue-light border border-duel-blue/35 rounded-md text-sm font-bold font-display tracking-wide uppercase;
+  }
+
+  /* Lift-on-hover card (different mechanic from tilt-3D / glow-ring of siblings) */
+  .lift-card {
+    @apply transition-all duration-300;
+  }
+  .lift-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px -10px rgba(249, 115, 22, 0.35), 0 0 0 1px rgba(249, 115, 22, 0.20);
+  }
+}
+
+@layer utilities {
+  .text-duel-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(110deg, #f97316 0%, #fb923c 35%, #3b82f6 100%);
+  }
+
+  .text-orange-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-duel-orange to-duel-orange-light;
+  }
+
+  .glow-orange {
+    filter: drop-shadow(0 0 14px rgba(249, 115, 22, 0.55));
+  }
+
+  .glow-blue {
+    filter: drop-shadow(0 0 14px rgba(37, 99, 235, 0.55));
+  }
+
+  .num {
+    @apply font-mono tabular-nums tracking-tight;
+  }
+}
+
+/* Range slider — Duel orange + blue */
+input[type="range"].duel-range {
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(90deg, #334155, #334155);
+  border-radius: 999px;
+  height: 6px;
+  outline: none;
+}
+input[type="range"].duel-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #f97316;
+  border: 3px solid #2563eb;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.65);
+}
+input[type="range"].duel-range::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #f97316;
+  border: 3px solid #2563eb;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.65);
+}
+
+/* Custom scrollbar — Duel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f97316, #2563eb);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #fb923c;
+}
+
+/* Recharts theme */
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background-color: #1e293b !important;
+  border: 1px solid #334155 !important;
+  border-radius: 10px !important;
+}
+
+/* Hero parallax grid base */
+.duel-grid-bg {
+  background-image:
+    linear-gradient(rgba(249, 115, 22, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249, 115, 22, 0.14) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at 50% 30%, black 35%, transparent 80%);
+}
+
+/* Sweeping orange/blue background for FinalCTA */
+.duel-sweep-bg {
+  background: linear-gradient(110deg,
+    rgba(249, 115, 22, 0.20) 0%,
+    rgba(37, 99, 235, 0.18) 50%,
+    rgba(249, 115, 22, 0.20) 100%);
+  background-size: 250% 250%;
+  animation: glowSweep 12s ease-in-out infinite;
+}
+
+@keyframes glowSweep {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
