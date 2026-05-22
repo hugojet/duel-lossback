@@ -81,7 +81,7 @@ export default function Hero() {
           className="mb-6 flex justify-center"
         >
           <span className="orange-badge text-sm px-4 py-2">
-            ⚔ Private Duel VIP Channel · Champion Whitelist Open
+            ⚔ Duel VIP Lossback · Champion Whitelist Open
           </span>
         </motion.div>
 
@@ -91,12 +91,12 @@ export default function Hero() {
           transition={{ duration: 0.65, delay: 0.1, ease: [0.34, 1.56, 0.64, 1] }}
           className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.02] font-display"
         >
-          Reclaim Up To{' '}
-          <span className="text-duel-gradient">20% Of Every</span>
+          Up to{' '}
+          <span className="text-duel-gradient">20% Weekly Lossback</span>
           <br />
-          Losing Week You Run
+          on Duel —
           <br />
-          On <span className="text-duel-gradient">Duel</span>
+          <span className="text-duel-gradient">Exclusive VIP Deal</span>
         </motion.h1>
 
         <motion.p
@@ -105,9 +105,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.25 }}
           className="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed"
         >
-          Champion-volume players on Duel.com can plug into a private VIP rebate channel and
-          recover up to{' '}
-          <strong className="text-white">20% of their net weekly losses</strong> —
+          Champion-volume players on Duel.com can plug into a private VIP lossback channel
+          and get up to{' '}
+          <strong className="text-white">20% lossback on their net weekly losses</strong> —
           settled in crypto every Monday, with zero rollover and no take-back clauses. The
           structure is off-menu and only opens through direct partner introduction.
         </motion.p>
@@ -127,7 +127,7 @@ export default function Hero() {
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/>
             </svg>
-            Claim My Champion Rebate
+            Claim My Deal
           </a>
           <a
             href="#calculator"
@@ -163,8 +163,8 @@ export default function Hero() {
           <div className="relative rounded-xl overflow-hidden border border-duel-border shadow-[0_0_60px_rgba(249,115,22,0.18)]">
             <div className="aspect-video bg-duel-card flex items-center justify-center">
               <iframe
-                src="https://www.youtube.com/embed/JtIY8mq3xZk?autoplay=0&mute=1&controls=1&rel=0"
-                title="Duel Casino Walkthrough"
+                src="https://www.youtube.com/embed/-qFLW_SA0J0?autoplay=0&mute=1&controls=1&rel=0"
+                title="Duel Casino — featured clip"
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

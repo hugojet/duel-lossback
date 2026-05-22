@@ -2,7 +2,7 @@ import { TELEGRAM_URL, TELEGRAM_HANDLE } from '../seo/siteMeta'
 
 const navLinks = [
   { href: '#home', label: 'Home' },
-  { href: '#calculator', label: 'Rebate Calculator' },
+  { href: '#calculator', label: 'Lossback Calculator' },
   { href: '#how-it-works', label: 'How It Works' },
   { href: '#about-duel', label: 'About Duel' },
   { href: '#the-math', label: 'The Maths' },
@@ -25,7 +25,7 @@ export default function Footer() {
               <span className="text-white font-extrabold text-lg font-display">duel-lossback.com</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
-              Authorised-partner rebate channel for sustained Duel.com players. Up to 20% of
+              Authorised-partner lossback channel for sustained Duel.com players. Up to 20% of
               weekly net losses returned in crypto, with zero rollover, brokered by Hugo —
               your Duel VIP host.
             </p>

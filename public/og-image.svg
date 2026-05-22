@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="ogTitle ogDesc">
-  <title id="ogTitle">Duel Lossback - Up to 20% weekly rebate</title>
-  <desc id="ogDesc">Private VIP rebate channel for Duel.com high-volume players.</desc>
+  <title id="ogTitle">Duel Lossback - Up to 20% weekly lossback</title>
+  <desc id="ogDesc">Private VIP lossback channel for Duel.com high-volume players.</desc>
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#020617"/>
@@ -29,9 +29,9 @@
   <circle cx="940" cy="170" r="280" fill="url(#blobA)"/>
   <circle cx="200" cy="510" r="260" fill="url(#blobB)"/>
   <rect x="60" y="60" width="180" height="36" rx="8" fill="#f97316" fill-opacity="0.15" stroke="#f97316" stroke-opacity="0.55" stroke-width="1.5"/>
-  <text x="150" y="84" text-anchor="middle" fill="#fb923c" font-family="Sora, Inter, system-ui, sans-serif" font-size="15" font-weight="700">PRIVATE VIP REBATE</text>
+  <text x="150" y="84" text-anchor="middle" fill="#fb923c" font-family="Sora, Inter, system-ui, sans-serif" font-size="15" font-weight="700">PRIVATE VIP LOSSBACK</text>
   <text x="60" y="220" fill="#ffffff" font-family="Sora, Inter, system-ui, sans-serif" font-size="68" font-weight="800">Duel Lossback</text>
-  <text x="60" y="310" fill="url(#accent)" font-family="Sora, Inter, system-ui, sans-serif" font-size="52" font-weight="800">Reclaim up to 20% weekly</text>
+  <text x="60" y="310" fill="url(#accent)" font-family="Sora, Inter, system-ui, sans-serif" font-size="52" font-weight="800">Up to 20% weekly lossback</text>
   <text x="60" y="380" fill="#cbd5e1" font-family="'Plus Jakarta Sans', Inter, system-ui, sans-serif" font-size="28" font-weight="500">Champion tier / Crypto rails / No rollover / Monday settlement</text>
   <line x1="60" y1="420" x2="1100" y2="420" stroke="#334155" stroke-width="1.5"/>
   <text x="60" y="490" fill="#94a3b8" font-family="'Plus Jakarta Sans', Inter, system-ui, sans-serif" font-size="22" font-weight="600">Brokered by Hugo - t.me/hugo_lossback_bot</text>

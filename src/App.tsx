@@ -97,7 +97,7 @@ export default function App() {
         <meta name="twitter:title" content={SITE_TITLE} />
         <meta name="twitter:description" content={OG_DESCRIPTION} />
         <meta name="twitter:image" content={OG_IMAGE_URL} />
-        <meta name="twitter:image:alt" content="Duel Lossback — Champion VIP rebate" />
+        <meta name="twitter:image:alt" content="Duel Lossback — Champion VIP lossback" />
 
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>

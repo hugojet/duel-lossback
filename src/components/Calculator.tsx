@@ -57,20 +57,20 @@ export default function Calculator() {
   const [style, setStyle] = useState<PlayStyle>(styles[1])
   const [tier, setTier] = useState<Tier>('challenger')
 
-  const rebatePct = tier === 'champion' ? 0.20 : 0.10
+  const lossbackPct = tier === 'champion' ? 0.20 : 0.10
 
   const results = useMemo(() => {
     const monthlyLoss = monthlyWager * style.marginPct
-    const monthlyRebate = monthlyLoss * rebatePct
-    const weeklyRebate = monthlyRebate / 4.33
-    const annualRebate = monthlyRebate * 12
-    const effectiveMargin = style.marginPct * (1 - rebatePct) * 100
-    return { monthlyLoss, monthlyRebate, weeklyRebate, annualRebate, effectiveMargin }
-  }, [monthlyWager, style, rebatePct])
+    const monthlyLossback = monthlyLoss * lossbackPct
+    const weeklyLossback = monthlyLossback / 4.33
+    const annualLossback = monthlyLossback * 12
+    const effectiveMargin = style.marginPct * (1 - lossbackPct) * 100
+    return { monthlyLoss, monthlyLossback, weeklyLossback, annualLossback, effectiveMargin }
+  }, [monthlyWager, style, lossbackPct])
 
-  const sWeekly = useSpringNumber(results.weeklyRebate)
-  const sMonthly = useSpringNumber(results.monthlyRebate)
-  const sAnnual = useSpringNumber(results.annualRebate)
+  const sWeekly = useSpringNumber(results.weeklyLossback)
+  const sMonthly = useSpringNumber(results.monthlyLossback)
+  const sAnnual = useSpringNumber(results.annualLossback)
   const sLoss = useSpringNumber(results.monthlyLoss)
   const sMargin = useSpringNumber(results.effectiveMargin)
 
@@ -81,13 +81,13 @@ export default function Calculator() {
           <div className="text-center mb-16">
             <span className="orange-badge mb-4">The Numbers First</span>
             <h2 className="section-heading mt-2">
-              Duel Rebate Calculator —{' '}
+              Duel Lossback Calculator —{' '}
               <span className="text-duel-gradient">What Your Monday Wire Actually Looks Like</span>
             </h2>
             <p className="section-subheading mx-auto mt-4">
               Drop in your real monthly volume, pick the wager style you actually run, choose
               the tier the desk would put you on. The figures below are statistical
-              expectations of what the Monday-morning rebate clears.
+              expectations of what the Monday-morning lossback clears.
             </p>
           </div>
         </Reveal>
@@ -148,7 +148,7 @@ export default function Calculator() {
               </div>
 
               <div>
-                <p className="text-slate-300 font-medium mb-3">Negotiated rebate tier</p>
+                <p className="text-slate-300 font-medium mb-3">Negotiated lossback tier</p>
                 <div className="grid grid-cols-2 gap-3">
                   <button
                     onClick={() => setTier('challenger')}
@@ -180,7 +180,7 @@ export default function Calculator() {
               <p className="text-xs text-slate-500 leading-relaxed">
                 * Numbers are statistical expectations using blended playing margins. Real
                 weeks vary around the mean — that variance is exactly what a percentage-based
-                rebate exists to soften.
+                lossback exists to soften.
               </p>
             </div>
           </Reveal>
@@ -190,7 +190,7 @@ export default function Calculator() {
               <div className="card lift-card border-2 border-duel-orange/50 bg-duel-orange/5">
                 <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2 font-display">
                   <span className="w-8 h-8 rounded-md bg-duel-orange/20 flex items-center justify-center text-duel-orange-light">⚔</span>
-                  Rebate projection
+                  Lossback projection
                 </h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center py-3 border-b border-duel-border/40">
@@ -198,15 +198,15 @@ export default function Calculator() {
                     <span className="text-white font-bold text-lg num">{formatUSD(sLoss)}</span>
                   </div>
                   <div className="flex justify-between items-center py-3 border-b border-duel-border/40">
-                    <span className="text-slate-400">Weekly rebate ({(rebatePct * 100).toFixed(0)}%)</span>
+                    <span className="text-slate-400">Weekly lossback ({(lossbackPct * 100).toFixed(0)}%)</span>
                     <span className="text-duel-orange-light font-extrabold text-xl num">{formatUSD(sWeekly)}</span>
                   </div>
                   <div className="flex justify-between items-center py-3 border-b border-duel-border/40">
-                    <span className="text-slate-400">Monthly rebate total</span>
+                    <span className="text-slate-400">Monthly lossback total</span>
                     <span className="text-duel-blue-light font-extrabold text-xl num">{formatUSD(sMonthly)}</span>
                   </div>
                   <div className="flex justify-between items-center py-3 border-b border-duel-border/40">
-                    <span className="text-slate-400">Annual rebate projection</span>
+                    <span className="text-slate-400">Annual lossback projection</span>
                     <span className="text-duel-orange-light font-extrabold text-2xl num">{formatUSD(sAnnual)}</span>
                   </div>
                   <div className="flex justify-between items-center py-3">
@@ -241,7 +241,10 @@ export default function Calculator() {
                 rel="noopener noreferrer"
                 className="btn-primary w-full justify-center"
               >
-                Send Hugo Your Volume Numbers ↗
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/>
+                </svg>
+                Claim My Deal
               </a>
             </div>
           </Reveal>

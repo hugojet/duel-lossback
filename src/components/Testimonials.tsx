@@ -31,7 +31,7 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    quote: `Cases is what I play 80% of the time. The single most useful thing Hugo did was confirm Cases drops fully feed the weekly net-loss tally — not all rebate structures cover loot-box mechanics cleanly. Three months in, the Monday wire shows up with the exact predicted amount in BTC every single week.`,
+    quote: `Cases is what I play 80% of the time. The single most useful thing Hugo did was confirm Cases drops fully feed the weekly net-loss tally — not all lossback structures cover loot-box mechanics cleanly. Three months in, the Monday wire shows up with the exact predicted amount in BTC every single week.`,
     username: 'N.M.',
     location: 'Cape Town, South Africa',
     flag: '🇿🇦',
@@ -41,7 +41,7 @@ const testimonials: Testimonial[] = [
     height: 'medium',
   },
   {
-    quote: `I am almost exclusively sportsbook — football parlays, NBA live, tennis in-play. The vast majority of "VIP deals" exclude sportsbook losses, which is exactly the part of my book that produces the biggest weekly swings. Hugo's Champion structure folds it all into a single rebate calc at the full 20% headline. That detail alone is worth four-figures per month for me.`,
+    quote: `I am almost exclusively sportsbook — football parlays, NBA live, tennis in-play. The vast majority of "VIP deals" exclude sportsbook losses, which is exactly the part of my book that produces the biggest weekly swings. Hugo's Champion structure folds it all into a single lossback calc at the full 20% headline. That detail alone is worth four-figures per month for me.`,
     username: 'T.N.',
     location: 'Hanoi, Vietnam',
     flag: '🇻🇳',

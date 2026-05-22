@@ -22,16 +22,16 @@ function Reveal({ children, delay = 0, className = '' }: { children: React.React
 }
 
 /* Scatter: sustained-vs-spike — each dot represents a real-world player profile
-   x: monthly wager, y: weekly rebate at Champion rate */
-type ScatterPoint = { wager: number; rebate: number; label: string; tier: 'Challenger' | 'Champion' }
+   x: monthly wager, y: weekly lossback at Champion rate */
+type ScatterPoint = { wager: number; lossback: number; label: string; tier: 'Challenger' | 'Champion' }
 
 const scatterData: ScatterPoint[] = [
-  { wager: 25_000,  rebate: 25_000 * 0.032 * 0.10 / 4.33, label: 'Conservative Challenger', tier: 'Challenger' },
-  { wager: 60_000,  rebate: 60_000 * 0.032 * 0.10 / 4.33, label: 'Mixed Challenger',        tier: 'Challenger' },
-  { wager: 90_000,  rebate: 90_000 * 0.032 * 0.10 / 4.33, label: 'Aggressive Challenger',   tier: 'Challenger' },
-  { wager: 140_000, rebate: 140_000 * 0.032 * 0.20 / 4.33, label: 'Entry Champion',         tier: 'Champion' },
-  { wager: 200_000, rebate: 200_000 * 0.032 * 0.20 / 4.33, label: 'Mid Champion',           tier: 'Champion' },
-  { wager: 320_000, rebate: 320_000 * 0.032 * 0.20 / 4.33, label: 'Upper Champion',         tier: 'Champion' },
+  { wager: 25_000,  lossback: 25_000 * 0.032 * 0.10 / 4.33, label: 'Conservative Challenger', tier: 'Challenger' },
+  { wager: 60_000,  lossback: 60_000 * 0.032 * 0.10 / 4.33, label: 'Mixed Challenger',        tier: 'Challenger' },
+  { wager: 90_000,  lossback: 90_000 * 0.032 * 0.10 / 4.33, label: 'Aggressive Challenger',   tier: 'Challenger' },
+  { wager: 140_000, lossback: 140_000 * 0.032 * 0.20 / 4.33, label: 'Entry Champion',         tier: 'Champion' },
+  { wager: 200_000, lossback: 200_000 * 0.032 * 0.20 / 4.33, label: 'Mid Champion',           tier: 'Champion' },
+  { wager: 320_000, lossback: 320_000 * 0.032 * 0.20 / 4.33, label: 'Upper Champion',         tier: 'Champion' },
 ]
 
 const challengerScatter = scatterData.filter(d => d.tier === 'Challenger')
@@ -42,10 +42,10 @@ type MarginRow = { name: string; margin: number; fill: string; note: string }
 
 const marginRows: MarginRow[] = [
   { name: 'No deal',                    margin: 3.20, fill: '#475569', note: 'Public sign-up, no rewards path' },
-  { name: 'Public loyalty (mid tier)',  margin: 3.04, fill: '#64748b', note: '~5% effective rebate' },
-  { name: 'Public loyalty (top tier)',  margin: 2.96, fill: '#94a3b8', note: '~7.5% effective rebate' },
-  { name: 'Challenger (10%)',           margin: 2.88, fill: '#fb923c', note: 'Partner channel, 10% rebate' },
-  { name: 'Champion (20%)',             margin: 2.56, fill: '#f97316', note: 'Partner channel, 20% rebate' },
+  { name: 'Public loyalty (mid tier)',  margin: 3.04, fill: '#64748b', note: '~5% effective lossback' },
+  { name: 'Public loyalty (top tier)',  margin: 2.96, fill: '#94a3b8', note: '~7.5% effective lossback' },
+  { name: 'Challenger (10%)',           margin: 2.88, fill: '#fb923c', note: 'Partner channel, 10% lossback' },
+  { name: 'Champion (20%)',             margin: 2.56, fill: '#f97316', note: 'Partner channel, 20% lossback' },
 ]
 
 const ScatterTooltip = ({ active, payload }: { active?: boolean; payload?: { payload: ScatterPoint }[] }) => {
@@ -56,7 +56,7 @@ const ScatterTooltip = ({ active, payload }: { active?: boolean; payload?: { pay
         <p className="text-white font-bold mb-1 font-display">{p.label}</p>
         <div className="space-y-0.5">
           <div className="text-slate-400">Monthly wager: <span className="text-white font-semibold num">${p.wager.toLocaleString()}</span></div>
-          <div className="text-slate-400">Weekly rebate: <span className="text-duel-orange-light font-semibold num">${Math.round(p.rebate).toLocaleString()}</span></div>
+          <div className="text-slate-400">Weekly lossback: <span className="text-duel-orange-light font-semibold num">${Math.round(p.lossback).toLocaleString()}</span></div>
           <div className="text-slate-500 text-xs mt-1">{p.tier} tier</div>
         </div>
       </div>
@@ -87,7 +87,7 @@ export default function Charts() {
           <div className="text-center mb-16">
             <span className="orange-badge mb-4">The Maths</span>
             <h2 className="section-heading mt-2">
-              The Long-Run Effect Of A Champion Rebate —{' '}
+              The Long-Run Effect Of A Champion Lossback —{' '}
               <span className="text-duel-gradient">Two Visuals, Same Underlying Number</span>
             </h2>
             <p className="section-subheading mx-auto mt-4">
@@ -102,11 +102,11 @@ export default function Charts() {
           <Reveal>
             <div className="card lift-card h-full">
               <h3 className="text-xl font-bold text-white mb-2 font-display">
-                Weekly rebate by sustained monthly volume
+                Weekly lossback by sustained monthly volume
               </h3>
               <p className="text-slate-400 text-sm mb-6">
                 Each dot is a representative player profile. Dot size scales with monthly
-                wager; orange dots are Champion-tier (20% rebate), pale ones are Challenger
+                wager; orange dots are Champion-tier (20% lossback), pale ones are Challenger
                 (10%).
               </p>
               <div className="h-72">
@@ -123,8 +123,8 @@ export default function Charts() {
                     />
                     <YAxis
                       type="number"
-                      dataKey="rebate"
-                      name="Weekly rebate"
+                      dataKey="lossback"
+                      name="Weekly lossback"
                       tickFormatter={v => `$${Math.round(v).toLocaleString()}`}
                       tick={{ fill: '#94a3b8', fontSize: 10 }}
                     />
@@ -142,7 +142,7 @@ export default function Charts() {
           <Reveal delay={0.12}>
             <div className="card lift-card h-full">
               <h3 className="text-xl font-bold text-white mb-2 font-display">
-                Effective playing margin after rebate, by reward path
+                Effective playing margin after lossback, by reward path
               </h3>
               <p className="text-slate-400 text-sm mb-6">
                 Lower is better for the player. Horizontal bars show what the operator's 3.2%
@@ -190,7 +190,7 @@ export default function Charts() {
         <Reveal>
           <div className="card max-w-4xl mx-auto">
             <h3 className="text-xl font-bold text-white mb-4 font-display">
-              Why a Champion rebate beats every other Duel reward path mathematically
+              Why a Champion lossback beats every other Duel reward path mathematically
             </h3>
             <div className="space-y-4 text-slate-300 leading-relaxed">
               <p>
@@ -202,10 +202,10 @@ export default function Charts() {
                 already producing sustained volume.
               </p>
               <p>
-                A rebate inverts that architecture. Suppose your sustained monthly wager on
+                A lossback inverts that architecture. Suppose your sustained monthly wager on
                 Duel sits at $140,000 across a mixed book at ~3.2% playing margin: your
                 statistical net loss expectation lands around $4,480 per month. A 20%
-                Champion rebate returns roughly $896 of that figure, unconditionally and
+                Champion lossback returns roughly $896 of that figure, unconditionally and
                 immediately withdrawable. The economic effect is a permanent shift from a
                 3.20% playing margin down to a{' '}
                 <strong className="text-white num">2.56% effective margin</strong>, applied to
@@ -213,7 +213,7 @@ export default function Charts() {
               </p>
               <p>
                 Compounded across a full calendar year of sustained volume, the gap between
-                "no rebate" and "20% Champion rebate" on a $200,000/month book accumulates to
+                "no lossback" and "20% Champion lossback" on a $200,000/month book accumulates to
                 roughly{' '}
                 <strong className="text-duel-orange-light num">$15,400 of recovered net loss</strong>.
                 The scatter chart above shows the corresponding weekly figure; the horizontal
@@ -222,7 +222,7 @@ export default function Charts() {
               </p>
               <p>
                 Variance is unchanged. A streamer-style Cases run is still going to do what
-                it does. What the partner-channel rebate changes is the long-run expected
+                it does. What the partner-channel lossback changes is the long-run expected
                 value of every dollar of wager you put through Duel — and for players already
                 operating at Champion volume, that expectancy shift is the only metric that
                 actually matters at year-end.

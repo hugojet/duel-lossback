@@ -82,7 +82,7 @@ export default function AboutDuel() {
             <p className="section-subheading mx-auto mt-4">
               Duel didn't arrive quietly. It rode in on years of broadcast partnerships, an
               originals catalogue tuned for live content, and one of the largest VIP
-              programmes in crypto gambling. Here is the platform context behind the rebate.
+              programmes in crypto gambling. Here is the platform context behind the lossback.
             </p>
           </div>
         </Reveal>
@@ -129,13 +129,13 @@ export default function AboutDuel() {
                 Pragmatic Live running the live-dealer side. The sportsbook brings the rest of
                 the wallet to life: tight spreads on the majors, deep live-betting markets,
                 generous parlay limits and a single shared balance with the casino — which is
-                what makes the Champion rebate work cleanly across both verticals.
+                what makes the Champion lossback work cleanly across both verticals.
               </p>
               <p>
                 For a high-volume player, Duel's combination of{' '}
                 <strong className="text-white">a low-margin originals catalogue, streamer-grade
                 content density, fast crypto rails and a unified casino + sportsbook wallet</strong>{' '}
-                is exactly the kind of platform context where a negotiated rebate compounds
+                is exactly the kind of platform context where a negotiated lossback compounds
                 cleanly month after month. The deal Hugo brokers takes an already-strong
                 operator and makes the long-run economics tilt noticeably in the player's
                 favour.
@@ -147,7 +147,7 @@ export default function AboutDuel() {
             {[
               { icon: '◇', title: 'Provably fair originals', desc: 'Cases, Coin Flip, Slime, Crash, Mines, Plinko, Towers — every round derives outcome from published server- and client-seed pairs.' },
               { icon: '◆', title: '10-minute crypto cashier', desc: 'BTC, ETH, USDT, USDC, LTC, SOL, XRP, DOGE, POL — most coins clear external withdrawal in under ten minutes on Champion-tier accounts.' },
-              { icon: '◈', title: 'Casino + sportsbook unified', desc: 'Single shared balance across 3,200+ casino titles and a deep sportsbook. Losses net into one weekly rebate figure across both verticals.' },
+              { icon: '◈', title: 'Casino + sportsbook unified', desc: 'Single shared balance across 3,200+ casino titles and a deep sportsbook. Losses net into one weekly lossback figure across both verticals.' },
               { icon: '◉', title: 'Curacao licensed operator', desc: 'Operated by Yolo Entertainment N.V. under Curacao gaming licence. Built-in responsible-play controls and session limits available across all accounts.' },
             ].map((feature) => (
               <div key={feature.title} className="card lift-card flex gap-4">
@@ -179,7 +179,7 @@ export default function AboutDuel() {
 
         <Reveal>
           <h3 className="text-center text-lg font-semibold text-slate-300 mb-6 font-display tracking-wide uppercase">
-            Crypto rails settled in every rebate payout
+            Crypto rails settled in every lossback payout
           </h3>
           {/* Horizontal row with auto-snapping pills */}
           <div className="flex gap-2 overflow-x-auto pb-2 -mx-2 px-2 snap-x snap-mandatory">

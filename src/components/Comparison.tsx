@@ -28,7 +28,7 @@ type Row = {
 
 const rows: Row[] = [
   {
-    feature: 'Headline weekly rebate',
+    feature: 'Headline weekly lossback',
     partnerLabel: 'Champion via partner desk',
     partnerValue: 'Up to 20%',
     publicLabel: 'Top public loyalty tier',
@@ -42,7 +42,7 @@ const rows: Row[] = [
     publicValue: '8 – 14 weeks',
   },
   {
-    feature: 'Rollover applied to rebate',
+    feature: 'Rollover applied to lossback',
     partnerLabel: 'Cash, withdrawable on credit',
     partnerValue: 'Zero',
     publicLabel: 'Standard tier bonuses',
@@ -177,7 +177,10 @@ export default function Comparison() {
             rel="noopener noreferrer"
             className="btn-primary text-lg"
           >
-            Open The Champion Conversation ↗
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/>
+            </svg>
+            Claim My Deal
           </a>
         </Reveal>
       </div>

@@ -42,7 +42,7 @@ const steps = [
   },
   {
     number: 3,
-    title: 'Rebate clears every Monday',
+    title: 'Lossback clears every Monday',
     desc: 'From the following Monday, your net losses are aggregated automatically. The negotiated percentage settles straight into your Duel wallet in the crypto you nominate — withdrawable on credit.',
     glyph: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6}>
@@ -56,7 +56,7 @@ const steps = [
 
 const perks = [
   { icon: '⚔', title: 'Cases & Crash priority access', desc: 'Champion accounts get unlocked access to high-stake Cases drops and elevated single-bet caps on Crash and Coin Flip — limits that the public catalogue throttles by default.' },
-  { icon: '🏟', title: 'Sportsbook included in rebate', desc: 'Net losses on the sportsbook side (parlays, live, pre-match) blend into the same weekly rebate calculation as casino activity. Most public rebate structures exclude this entirely.' },
+  { icon: '🏟', title: 'Sportsbook included in lossback', desc: 'Net losses on the sportsbook side (parlays, live, pre-match) blend into the same weekly lossback calculation as casino activity. Most public lossback structures exclude this entirely.' },
   { icon: '🎟', title: 'Closed-leaderboard seeding', desc: 'Direct seeding into Duel\'s invite-only leaderboard events and creator-collab Cases tournaments — content that never hits the public promo grid.' },
   { icon: '🛗', title: 'Cashier ceiling lifted', desc: 'Default per-transaction withdrawal caps are raised on request for Champion-tier accounts. Critical for players moving significant weekly capital between Duel and external wallets.' },
   { icon: '🧾', title: 'Monday breakdown statement', desc: 'Every Monday morning you receive a clean breakdown: wagered, returned, net loss by vertical, applied rate, exact crypto amount, on-chain tx hash. Full transparency, no follow-up needed.' },
@@ -112,7 +112,7 @@ export default function TheDeal() {
               <div className="orange-badge mb-4">Tier 1</div>
               <h4 className="text-2xl font-extrabold text-white mb-2 font-display">Challenger</h4>
               <div className="num text-3xl font-extrabold text-duel-gradient mb-1">10%</div>
-              <div className="text-slate-400 text-sm mb-6">Weekly net-loss rebate</div>
+              <div className="text-slate-400 text-sm mb-6">Weekly net-loss lossback</div>
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between items-center py-2 border-b border-duel-border/50">
                   <span className="text-slate-400">Monthly wager band</span>
@@ -123,16 +123,19 @@ export default function TheDeal() {
                   <span className="text-white font-semibold num">$3,840</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-duel-border/50">
-                  <span className="text-slate-400">Weekly rebate (avg)</span>
+                  <span className="text-slate-400">Weekly lossback (avg)</span>
                   <span className="text-duel-orange-light font-bold num">~$95</span>
                 </div>
                 <div className="flex justify-between items-center py-2">
-                  <span className="text-slate-400">Annualised rebate</span>
+                  <span className="text-slate-400">Annualised lossback</span>
                   <span className="text-duel-orange-light font-bold num">~$4,600</span>
                 </div>
               </div>
               <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className="btn-secondary w-full mt-6 justify-center text-sm">
-                Apply as Challenger
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/>
+                </svg>
+                Claim My Deal
               </a>
             </div>
 
@@ -144,7 +147,7 @@ export default function TheDeal() {
               <div className="orange-badge mb-4">Tier 2</div>
               <h4 className="text-2xl font-extrabold text-white mb-2 font-display">Champion ⚔</h4>
               <div className="num text-3xl font-extrabold text-duel-gradient mb-1">Up to 20%</div>
-              <div className="text-slate-400 text-sm mb-6">Weekly net-loss rebate</div>
+              <div className="text-slate-400 text-sm mb-6">Weekly net-loss lossback</div>
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between items-center py-2 border-b border-duel-border/50">
                   <span className="text-slate-400">Monthly wager band</span>
@@ -155,16 +158,19 @@ export default function TheDeal() {
                   <span className="text-white font-semibold num">$8,400</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-duel-border/50">
-                  <span className="text-slate-400">Weekly rebate (avg)</span>
+                  <span className="text-slate-400">Weekly lossback (avg)</span>
                   <span className="text-duel-orange-light font-bold num">~$390</span>
                 </div>
                 <div className="flex justify-between items-center py-2">
-                  <span className="text-slate-400">Annualised rebate</span>
+                  <span className="text-slate-400">Annualised lossback</span>
                   <span className="text-duel-orange-light font-bold num">~$20,160</span>
                 </div>
               </div>
               <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className="btn-primary w-full mt-6 justify-center text-sm animate-orange-pulse">
-                Apply as Champion
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/>
+                </svg>
+                Claim My Deal
               </a>
             </div>
           </div>

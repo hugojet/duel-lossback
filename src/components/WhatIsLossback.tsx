@@ -19,12 +19,12 @@ function Reveal({ children, className = '', delay = 0 }: { children: React.React
 
 const splitRows: Array<{
   title: string
-  rebate: string
+  lossback: string
   others: { kind: string; text: string }[]
 }> = [
   {
     title: 'Withdrawability',
-    rebate: 'Real cash, no lock-up',
+    lossback: 'Real cash, no lock-up',
     others: [
       { kind: 'Deposit bonus', text: 'Locked behind rollover' },
       { kind: 'Rakeback', text: 'Real cash' },
@@ -33,7 +33,7 @@ const splitRows: Array<{
   },
   {
     title: 'Rollover obligation',
-    rebate: 'Zero',
+    lossback: 'Zero',
     others: [
       { kind: 'Deposit bonus', text: '30x to 50x of bonus' },
       { kind: 'Rakeback', text: 'Zero' },
@@ -42,7 +42,7 @@ const splitRows: Array<{
   },
   {
     title: 'Calculation basis',
-    rebate: 'Net loss across verticals',
+    lossback: 'Net loss across verticals',
     others: [
       { kind: 'Deposit bonus', text: 'Deposit amount' },
       { kind: 'Rakeback', text: 'Volume of bets' },
@@ -51,7 +51,7 @@ const splitRows: Array<{
   },
   {
     title: 'Settlement timing',
-    rebate: 'Monday morning auto',
+    lossback: 'Monday morning auto',
     others: [
       { kind: 'Deposit bonus', text: 'Single shot on claim' },
       { kind: 'Rakeback', text: 'Daily / weekly drip' },
@@ -60,7 +60,7 @@ const splitRows: Array<{
   },
   {
     title: 'Practical ceiling',
-    rebate: 'Up to 20% of net loss',
+    lossback: 'Up to 20% of net loss',
     others: [
       { kind: 'Deposit bonus', text: 'Fixed dollar cap' },
       { kind: 'Rakeback', text: '~1% to 4%' },
@@ -75,9 +75,9 @@ export default function WhatIsLossback() {
       <div className="section-container">
         <Reveal>
           <div className="text-center mb-16">
-            <span className="orange-badge mb-4">Reclaim 101</span>
+            <span className="orange-badge mb-4">Lossback 101</span>
             <h2 className="section-heading mt-2">
-              The Difference Between A Rebate Deal, A Bonus,{' '}
+              The Difference Between A Lossback Deal, A Bonus,{' '}
               <span className="text-duel-gradient">And A Loyalty Tier</span>
             </h2>
             <p className="section-subheading mx-auto mt-4">
@@ -92,7 +92,7 @@ export default function WhatIsLossback() {
             <div className="space-y-6 text-slate-300 leading-relaxed">
               <p className="text-lg">
                 A <strong className="text-white">Duel lossback</strong> — referred to inside
-                the partner channel simply as "the rebate" — pays back a percentage of your
+                the partner channel simply as "the lossback" — pays back a percentage of your
                 net losses across a seven-day window. It settles in crypto with no rollover
                 requirement, no game restrictions, and no time decay attached. The structure
                 is the single highest-EV reward instrument on the platform and sits
@@ -104,12 +104,12 @@ export default function WhatIsLossback() {
               </p>
               <div className="space-y-4">
                 <div className="card border-l-4 border-l-duel-orange">
-                  <h3 className="font-bold text-white text-lg mb-2 font-display">Rebate (the deal)</h3>
+                  <h3 className="font-bold text-white text-lg mb-2 font-display">Lossback (the deal)</h3>
                   <p>
                     Tracks <em>net loss</em> — total wagered minus total returned — across the
                     settlement window and pays a fixed percentage of that figure back to your
                     wallet. If a week closes $30,000 wagered with $33,500 returned and a net
-                    loss of $5,500, a 20% Champion rebate clears{' '}
+                    loss of $5,500, a 20% Champion lossback clears{' '}
                     <strong className="text-white">$1,100 on Monday morning</strong>. No
                     rollover, no withdrawal hold, no clawback against next week.
                   </p>
@@ -136,19 +136,19 @@ export default function WhatIsLossback() {
                   <h3 className="font-bold text-white text-lg mb-2 font-display">Public loyalty tiers</h3>
                   <p>
                     XP-based ladder paying out level-up bonuses, periodic rakeback bursts and
-                    tournament entries. Fine for casual sessions, but the meaningful rebate
+                    tournament entries. Fine for casual sessions, but the meaningful lossback
                     percentages cap out around 7%-ish even at the very top tier — and only
                     after months of climbing. The partner channel bypasses the entire ladder.
                   </p>
                 </div>
               </div>
               <p>
-                The <strong className="text-white">Champion rebate</strong> Hugo brokers
+                The <strong className="text-white">Champion lossback</strong> Hugo brokers
                 short-circuits the public ladder. Authorised partners negotiate directly with
                 the VIP operations desk, which means the percentage you land on is calibrated
                 to your real volume — not to which loyalty colour you have ground out. For a
                 player processing $120,000+ per month, the gap between a public top-tier 6%
-                rebate and a negotiated 20% Champion rebate is roughly{' '}
+                lossback and a negotiated 20% Champion lossback is roughly{' '}
                 <strong className="text-white">$1,400 to $2,200 of recovered loss per week</strong>,
                 applied directly to the bankroll.
               </p>
@@ -156,7 +156,7 @@ export default function WhatIsLossback() {
                 None of this changes single-session variance. A brutal Cases run is still a
                 brutal Cases run. What changes is the long-run{' '}
                 <strong className="text-white">effective playing margin</strong>: a 3.2%
-                statistical margin combined with a 20% rebate behaves like a 2.56% effective
+                statistical margin combined with a 20% lossback behaves like a 2.56% effective
                 margin across the year. That small absolute shift, compounded over annual
                 volume, is the entire economic reason the partner channel exists.
               </p>
@@ -167,10 +167,10 @@ export default function WhatIsLossback() {
             <div className="sticky top-8 space-y-8">
               <div className="card p-6 sm:p-8">
                 <h3 className="text-xl font-bold text-white mb-6 text-center font-display">
-                  One rebate cycle, drawn as a ring
+                  One lossback cycle, drawn as a ring
                 </h3>
                 {/* 360-degree ring diagram — single circular flow */}
-                <svg viewBox="0 0 360 360" className="w-full max-w-xs mx-auto" aria-label="Circular Duel rebate settlement diagram">
+                <svg viewBox="0 0 360 360" className="w-full max-w-xs mx-auto" aria-label="Circular Duel lossback settlement diagram">
                   <defs>
                     <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#f97316" />
@@ -231,7 +231,7 @@ export default function WhatIsLossback() {
 
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { value: '0x', label: 'Rollover on rebate' },
+                  { value: '0x', label: 'Rollover on lossback' },
                   { value: '20%', label: 'Champion rate cap' },
                   { value: '7d', label: 'Settlement window' },
                   { value: 'Mon', label: 'Wire arrives' },
@@ -246,10 +246,10 @@ export default function WhatIsLossback() {
           </Reveal>
         </div>
 
-        {/* Comparison split-screen — Rebate column on left, three other mechanics stacked vertically on right with a central divider */}
+        {/* Comparison split-screen — Lossback column on left, three other mechanics stacked vertically on right with a central divider */}
         <Reveal className="mt-20">
           <h3 className="text-2xl font-bold text-white mb-6 text-center font-display">
-            Rebate vs. the rest — broken down by mechanic
+            Lossback vs. the rest — broken down by mechanic
           </h3>
           <div className="space-y-3">
             {splitRows.map((row, i) => (
@@ -269,13 +269,13 @@ export default function WhatIsLossback() {
                   <div className="ml-3 text-white font-bold font-display text-sm">{row.title}</div>
                 </div>
 
-                {/* Left side: Rebate winner */}
+                {/* Left side: Lossback winner */}
                 <div className="lg:col-span-4 rounded-lg bg-duel-orange/10 border border-duel-orange/35 px-4 py-3">
                   <div className="text-[10px] uppercase tracking-wider text-duel-orange-light font-display mb-1">
-                    Rebate (partner channel)
+                    Lossback (partner channel)
                   </div>
                   <div className="text-duel-orange-light font-bold text-sm">
-                    {row.rebate}
+                    {row.lossback}
                   </div>
                 </div>
 

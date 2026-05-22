@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { TELEGRAM_URL, TELEGRAM_HANDLE } from '../seo/siteMeta'
+import { TELEGRAM_URL } from '../seo/siteMeta'
 
 function Reveal({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef(null)
@@ -20,9 +20,9 @@ function Reveal({ children, delay = 0, className = '' }: { children: React.React
 
 const advantages = [
   { icon: '⊕', title: 'Named line to the Duel VIP desk', desc: 'Hugo runs an authorised partner book and pings the Duel VIP team by name. Rate approvals, cashier escalations and event seeding all go through one trusted inbox.' },
-  { icon: '⊗', title: 'Verified partner status', desc: 'This is not a recycled affiliate link. Hugo holds a formal partner account inside Duel\'s programme — the prerequisite for negotiating bespoke rebate structures on managed accounts.' },
-  { icon: '↯', title: 'Same-week activation', desc: 'No XP grind through the public loyalty ladder. Once your volume is verified, the rebate goes live the very next Monday — most Champion sign-ups settle inside forty-eight hours.' },
-  { icon: '◐', title: 'Structure shaped to your book', desc: 'A Cases-heavy player and a sportsbook-first player do not need identical rebate mechanics. Hugo negotiates the percentage, the included verticals and the cashier caps to fit your actual wager pattern.' },
+  { icon: '⊗', title: 'Verified partner status', desc: 'This is not a recycled affiliate link. Hugo holds a formal partner account inside Duel\'s programme — the prerequisite for negotiating bespoke lossback structures on managed accounts.' },
+  { icon: '↯', title: 'Same-week activation', desc: 'No XP grind through the public loyalty ladder. Once your volume is verified, the lossback goes live the very next Monday — most Champion sign-ups settle inside forty-eight hours.' },
+  { icon: '◐', title: 'Structure shaped to your book', desc: 'A Cases-heavy player and a sportsbook-first player do not need identical lossback mechanics. Hugo negotiates the percentage, the included verticals and the cashier caps to fit your actual wager pattern.' },
   { icon: '↥', title: 'Cashier ceilings raised', desc: 'Default per-transaction withdrawal caps get lifted on request for verified Champion accounts. For players moving meaningful weekly capital, this is often the single biggest quality-of-life upgrade.' },
   { icon: '↻', title: 'Rate re-negotiation every quarter', desc: 'Volume grows, the rate grows with it. Every quarter Hugo re-opens rate discussions with the Duel VIP desk based on your sustained trajectory — long-term partners tend to climb beyond entry-Champion brackets.' },
 ]
@@ -35,7 +35,7 @@ export default function WhyHugo() {
           <div className="text-center mb-16">
             <span className="orange-badge mb-4">The Partner</span>
             <h2 className="section-heading mt-2">
-              Why The Rebate Goes Through <span className="text-duel-gradient">A Named Partner</span>,
+              Why The Lossback Goes Through <span className="text-duel-gradient">A Named Partner</span>,
               <br />Not A Public Sign-Up Funnel
             </h2>
             <p className="section-subheading mx-auto mt-4">
@@ -59,7 +59,7 @@ export default function WhyHugo() {
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
                 Authorised Duel.com partner with a direct working relationship to the VIP
                 operations team. Specialises in onboarding Champion-volume players under
-                bespoke weekly rebate and cashier-lift agreements.
+                bespoke weekly lossback and cashier-lift agreements.
               </p>
               <div className="space-y-3 text-sm text-left">
                 <div className="flex items-center gap-3 text-slate-300">
@@ -88,7 +88,7 @@ export default function WhyHugo() {
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z" />
                 </svg>
-                {TELEGRAM_HANDLE}
+                Claim My Deal
               </a>
             </div>
           </Reveal>
@@ -100,7 +100,7 @@ export default function WhyHugo() {
                 whatever welcome incentive is live this month, the public loyalty ladder, the
                 default cashier caps, and a support queue shared with everyone else. No human
                 is looking at your behaviour. No one is negotiating on your behalf. The
-                meaningful rebate percentages stay entirely out of reach.
+                meaningful lossback percentages stay entirely out of reach.
               </p>
               <p>
                 An <strong className="text-white">authorised partner</strong> sits one rung up
@@ -113,9 +113,9 @@ export default function WhyHugo() {
               </p>
               <p>
                 For a player processing $120,000+ of monthly wager across Cases, Crash, slots
-                and the sportsbook, the spread between the public top-tier rebate (around 6%
+                and the sportsbook, the spread between the public top-tier lossback (around 6%
                 effective at the very top of the public ladder) and a negotiated 20% Champion
-                rebate works out to roughly{' '}
+                lossback works out to roughly{' '}
                 <strong className="text-white">$1,400 to $2,200 of recovered net loss every
                 single week</strong>. Annualised, that is a serious component of any
                 Champion bankroll.
